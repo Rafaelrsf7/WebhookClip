@@ -27,6 +27,8 @@ GROUP_IDS = {
 def receber():
     payload = request.get_json()
 
+    print("📥 PAYLOAD RECEBIDO:", payload)
+
     # Tratar apenas eventos de pagamento
     if payload.get("type") == "payment":
         payment_id = payload.get("data", {}).get("id")
